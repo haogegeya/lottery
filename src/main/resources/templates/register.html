@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>开始前准备</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css"
+	href="./plugins/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./js/jquery3.5.js"></script>
+
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="./js/popper.min.js"></script>
+
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script
+	src="./plugins/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+
+<style>
+body{
+background:url(./img/fage.jpg);
+}
+#write {
+	margin: 20%;
+}
+
+;
+.label_center {
+	text-align: center;
+}
+
+#main {
+	
+}
+
+label {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="write"></div>
+		<div class="row">
+			<div class="col-md-12 " id="main">
+			<div class="card">
+			<div class="card-body">
+				<form action="commit_infermation">
+					<div class="form-group">
+						<label for="name">你谁:</label> <input type="text" name="name"
+							class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="luckNum">幸运数字:</label> <input type="text" name="luckNum" placeholder="多个数字空格隔开"
+							class="form-control">
+					</div>
+					<div class="form-group">
+						<label>幸运数字出现概率:</label>
+						<select class="form-control" id="sel1" name="threshold">
+	<option value="0.5">0.3</option>
+	<option value="0.5">0.4</option>
+    <option value="0.5">0.5</option>
+    <option value="0.6">0.6</option>
+    <option value="0.7">0.7</option>
+    <option value="0.8">0.8</option>
+    <option value="0.9">0.9</option>
+    <option value="1.0">1</option>
+  </select>
+					</div>
+					<div class="form-group">
+						<label for="luckNum">每期注数:</label> <select class="form-control" id="sel1" name="num">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+					</div>
+					<div class="from-group">
+						<label style="display:block;">规则:</label>
+						 <label class="radio-inline"><input type="radio" name="rule" value="1">单号多买</label>
+    					<label class="radio-inline"><input type="radio" name="rule" value="2">多号多买</label>
+					</div>
+	<button type="submit" class="btn btn-primary btn-block">GO</button>
+				</form>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:inline="javascript">
+	window.onload=function(){
+		var msg = [[${msg}]];
+		if(msg=="-1"){
+			alert("这位票友已存在！！！")
+		}
+	}
+</script>
+</html>

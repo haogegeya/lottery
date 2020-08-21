@@ -1,0 +1,36 @@
+# Server settings  
+server:  
+    port: 8888
+    address: 0.0.0.0
+    context-path: /
+    
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://********:3306/lottery?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: ***
+    password: ***
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    mode: LEGACYHTML5
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 30MB
+      max-request-size: 30MB

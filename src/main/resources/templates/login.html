@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登入</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css"
+	href="./plugins/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./js/jquery3.5.js"></script>
+
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="./js/popper.min.js"></script>
+
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script
+	src="./plugins/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+
+<style>
+body{
+	background:url(./img/bg.jpg);
+	background-attachment: scroll; 
+	background-size: 100% auto;
+	width:100%;
+}
+#write {
+	margin: 20%;
+}
+
+;
+.label_center {
+	text-align: center;
+}
+
+#main {
+	
+}
+
+label {
+	margin-left: auto;
+	margin-right: auto;
+}
+div{filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.95; } 
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="write"></div>
+		<div class="row">
+			<div class="col-md-12 " id="main" >
+			<div class="card">
+			<div class="card-body">
+				<form action="login">
+					<div class="form-group">
+						<label for="name"></label> <input type="text" name="name"
+							class="form-control">
+					</div>
+	<button type="submit" class="btn btn-primary btn-block">TO LOGIN</button>
+	<button type="button" class="btn btn-secondary btn-block" onclick="javascrtpt:window.location.href='register'">TO REGISTER</button>
+				</form>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script th:inline="javascript">
+	window.onload=function(){
+		var msg = [[${msg}]];
+		if(msg=="-1"){
+			alert("这位票友怕是去火星了吧！！！")
+		}
+	}
+</script>
+</html>
